@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const contentB = document.getElementById('contentB');
   const modalA = document.getElementById('modalA');
   const modalB = document.getElementById('modalB');
-  const closeModalA = modalA.querySelector('.close');
-  const closeModalB = modalB.querySelector('.close');
 
   function toggleContent(contentId) {
       if (contentId === 'contentA') {
@@ -32,16 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   contentB.addEventListener('click', () => {
       modalB.style.display = 'block';
-  });
-
-  closeModalA.addEventListener('click', (event) => {
-      modalA.style.display = 'none';
-      event.stopPropagation();
-  });
-
-  closeModalB.addEventListener('click', (event) => {
-      modalB.style.display = 'none';
-      event.stopPropagation();
   });
 
   window.addEventListener('click', (event) => {
