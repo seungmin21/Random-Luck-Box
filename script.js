@@ -1,40 +1,48 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const pouchA = document.getElementById('pouchA');
-  const pouchB = document.getElementById('pouchB');
-  const contentA = document.getElementById('contentA');
-  const contentB = document.getElementById('contentB');
-  const modalA = document.getElementById('modalA');
-  const modalB = document.getElementById('modalB');
+document.addEventListener('DOMContentLoaded', () => {
+    const pouchA = document.getElementById('pouchA');
+    const pouchB = document.getElementById('pouchB');
+    const contentA = document.getElementById('contentA');
+    const contentB = document.getElementById('contentB');
+    const modalA = document.getElementById('modalA');
+    const modalB = document.getElementById('modalB');
 
-  function toggleContent(contentId) {
-      if (contentId === 'contentA') {
-          contentA.classList.remove('hidden');
-          contentB.classList.add('hidden');
-      } else if (contentId === 'contentB') {
-          contentA.classList.add('hidden');
-          contentB.classList.remove('hidden');
-      }
-  }
+    const list = ["꽝", "다음 기회에", "한번 더", "광", "물티슈"];
 
-  pouchA.addEventListener('click', () => {
-      toggleContent('contentA');
-  });
+    function toggleContent(contentId) {
+        if (contentId === 'contentA') {
+            contentA.classList.remove('hidden');
+            contentB.classList.add('hidden');
+        } else if (contentId === 'contentB') {
+            contentA.classList.add('hidden');
+            contentB.classList.remove('hidden');
+        }
+    }
 
-  pouchB.addEventListener('click', () => {
-      toggleContent('contentB');
-  });
+    function showModalContent(modalContent) {
+        const randomIndex = Math.floor(Math.random() * list.length);
+        modalContent.textContent = list[randomIndex];
+    }
 
-  contentA.addEventListener('click', () => {
-      modalA.style.display = 'block';
-  });
+    pouchA.addEventListener('click', () => {
+        toggleContent('contentA');
+    });
 
-  contentB.addEventListener('click', () => {
-      modalB.style.display = 'block';
-  });
+    pouchB.addEventListener('click', () => {
+        toggleContent('contentB');
+    });
 
-  window.addEventListener('click', (event) => {
-      if (event.target.classList.contains('modal')) {
-          event.target.style.display = 'none';
-      }
-  });
+    contentA.addEventListener('click', () => {
+        modalA.style.display = 'block';
+    });
+
+    contentB.addEventListener('click', () => {
+        showModalContent(modalContentB)
+        modalB.style.display = 'block';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
+        }
+    });
 });
