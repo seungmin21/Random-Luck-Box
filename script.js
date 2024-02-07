@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentB = document.getElementById('contentB');
     const modalA = document.getElementById('modalA');
     const modalB = document.getElementById('modalB');
+    const modalContentB = document.getElementById('modal-ContentB')
 
     const list = ["꽝", "다음 기회에", "한번 더", "광", "물티슈"];
 
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function showModalContent(modalContent) {
+    function randomPluck(modalContent) {
         const randomIndex = Math.floor(Math.random() * list.length);
         modalContent.textContent = list[randomIndex];
     }
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     contentB.addEventListener('click', () => {
-        showModalContent(modalContentB)
+        randomPluck(modalContentB)
         modalB.style.display = 'block';
     });
 
