@@ -1,107 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복주머니 이벤트</title>
-<style>
-    .container {
-        display: flex;
-        justify-content: space-between;
-        margin: 20px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>복주머니 이벤트</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
     }
+    #root {
+      width: 100vw;
+      height: 100vh;
+      box-sizing: border-box;
+      display: flex;
+    }
+
     .pouch {
-        width: 100px;
-        height: 100px;
-        background-color: #ccc;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
+      width: 100px;
+      height: 100px;
+      background-color: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
     }
+
     .hidden {
-        display: none;
+      display: none;
     }
+
     .modal {
-        display: none;
-        position: fixed;
-        z-index: 999;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
     }
+
     .modal-content {
-        background-color: #f0f0f0;
-        margin: 10% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        max-width: 400px;
-        text-align: center;
+      background-color: #f0f0f0;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
     }
-</style>
+    #content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+    #container {
+      display: flex;
+    }
+  </style>
 </head>
+
 <body>
+  <div id="root">
+    <div id="container">
+      <div class="pouch" id="pouchA">A</div>
+      <div class="pouch" id="pouchB">B</div>
+    </div>
 
-<div class="container">
-    <div class="pouch" id="pouchA">A</div>
-    <div class="pouch" id="pouchB">B</div>
-</div>
+    <div id="content">
+      <div class="hidden" id="contentA">내용 A</div>
+      <div class="hidden" id="contentB">내용 B</div>
+    </div>
 
-<div class="hidden" id="contentA">내용 A</div>
-<div class="hidden" id="contentB">내용 B</div>
+    <div id="modalA" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>모달 내용 A</p>
+      </div>
+    </div>
 
-<div id="modalA" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>모달 내용 A</p>
+    <div id="modalB" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>모달 내용 B</p>
+      </div>
+    </div>
   </div>
-</div>
-
-<div id="modalB" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>모달 내용 B</p>
-  </div>
-</div>
-
-<script>
+  <script>
     const pouchA = document.getElementById('pouchA');
     const pouchB = document.getElementById('pouchB');
     const contentA = document.getElementById('contentA');
     const contentB = document.getElementById('contentB');
     const modalA = document.getElementById('modalA');
     const modalB = document.getElementById('modalB');
-    const closeModalA = modalA.querySelector('.close');
-    const closeModalB = modalB.querySelector('.close');
+    const closeModalA = modalA.querySelector('.modal-content');
+    const closeModalB = modalB.querySelector('.modal-content');
 
     pouchA.addEventListener('click', () => {
-        contentA.classList.toggle('hidden');
+      contentA.classList.toggle('hidden');
     });
 
     pouchB.addEventListener('click', () => {
-        contentB.classList.toggle('hidden');
+      contentB.classList.toggle('hidden');
     });
 
     contentA.addEventListener('click', () => {
-        modalA.style.display = 'block';
-    });
-
-    closeModalA.addEventListener('click', () => {
-        modalA.style.display = 'none';
+      modalA.style.display = 'block';
     });
 
     contentB.addEventListener('click', () => {
-        modalB.style.display = 'block';
+      modalB.style.display = 'block';
     });
 
-    closeModalB.addEventListener('click', () => {
-        modalB.style.display = 'none';
+    closeModalA.addEventListener('click', (event) => {
+      event.stopPropagation();
     });
-</script>
 
+    closeModalB.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
