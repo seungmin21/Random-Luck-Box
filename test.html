@@ -1,16 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>복주머니 이벤트</title>
+<style>
+    .root {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+    .pouch {
+        width: 100px;
+        height: 100px;
+        background-color: #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .content {
+        display: none;
+        width: 200px;
+        height: 200px;
+        background-color: #f0f0f0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .content.visible {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="purse" id="purseA">복주머니 A</div>
-    <div class="purse" id="purseB">복주머니 B</div>
+<div class="root">
+    <div class="pouch" id="pouchA">A</div>
+    <div class="pouch" id="pouchB">B</div>
+    <div class="content" id="contentA">내용 A</div>
+    <div class="content" id="contentB">내용 B</div>
   </div>
-  <script src="script.js"></script>
+
+<script>
+    const pouchA = document.getElementById('pouchA');
+    const pouchB = document.getElementById('pouchB');
+    const contentA = document.getElementById('contentA');
+    const contentB = document.getElementById('contentB');
+
+    pouchA.addEventListener('click', () => {
+        contentA.classList.toggle('visible');
+    });
+
+    pouchB.addEventListener('click', () => {
+        contentB.classList.toggle('visible');
+    });
+
+    contentA.addEventListener('click', () => {
+        contentA.classList.toggle('visible');
+    });
+
+    contentB.addEventListener('click', () => {
+        contentB.classList.toggle('visible');
+    });
+</script>
+
 </body>
 </html>
