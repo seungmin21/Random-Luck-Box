@@ -61,13 +61,22 @@
   </div>
 </div>
 
+<div id="modalB" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>모달 내용 B</p>
+  </div>
+</div>
+
 <script>
     const pouchA = document.getElementById('pouchA');
     const pouchB = document.getElementById('pouchB');
     const contentA = document.getElementById('contentA');
     const contentB = document.getElementById('contentB');
     const modalA = document.getElementById('modalA');
+    const modalB = document.getElementById('modalB');
     const closeModalA = modalA.querySelector('.close');
+    const closeModalB = modalB.querySelector('.close');
 
     pouchA.addEventListener('click', () => {
         contentA.classList.toggle('hidden');
@@ -83,6 +92,14 @@
 
     closeModalA.addEventListener('click', () => {
         modalA.style.display = 'none';
+    });
+
+    contentB.addEventListener('click', () => {
+        modalB.style.display = 'block';
+    });
+
+    closeModalB.addEventListener('click', () => {
+        modalB.style.display = 'none';
     });
 </script>
 
