@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 .pouch {
-  width: 100px;
+  width: 15vw;
   height: 100px;
   background-color: #ccc;
   display: flex;
@@ -31,15 +31,16 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 .modal-content {
+  position: fixed;
+    top: 25%;
+    left: 25%;
   background-color: #f0f0f0;
-  margin: 10% auto;
-  padding: 20px;
   border: 1px solid #888;
-  width: 80%;
-  max-width: 400px;
+  width: 700px;
+  height: 400px;
   text-align: center;
   animation-name: modalOpen;
-  animation-duration: 3s;
+  animation-duration: 5s;
 }
 
   /* 모달 애니메이션 */
@@ -52,7 +53,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60vw;
+  width: 35vw;
 }
 #container {
   display: flex;
@@ -60,6 +61,6 @@
 }
 
 #airBox {
-  width: 100px;
+  width: 50px;
   height: 100px;
 }
