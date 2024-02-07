@@ -60,14 +60,19 @@
     #container {
       display: flex;
     }
+    #airBox {
+      width: 50px;
+      height: 50px;
+    }
   </style>
 </head>
 
 <body>
   <div id="root">
     <div id="container">
-      <div class="pouch" id="pouchA">A</div>
-      <div class="pouch" id="pouchB">B</div>
+      <div class="pouch" id="pouchA">박스 A</div>
+      <div id="airBox"></div>
+      <div class="pouch" id="pouchB">박스 B</div>
     </div>
 
     <div id="content">
@@ -99,12 +104,22 @@
     const closeModalA = modalA.querySelector('.modal-content');
     const closeModalB = modalB.querySelector('.modal-content');
 
+    function toggleContent(contentId) {
+        if (contentId === 'contentA') {
+            contentA.classList.remove('hidden');
+            contentB.classList.add('hidden');
+        } else if (contentId === 'contentB') {
+            contentA.classList.add('hidden');
+            contentB.classList.remove('hidden');
+        }
+    }
+
     pouchA.addEventListener('click', () => {
-      contentA.classList.toggle('hidden');
+      toggleContent('contentA');
     });
 
     pouchB.addEventListener('click', () => {
-      contentB.classList.toggle('hidden');
+      toggleContent('contentB');
     });
 
     contentA.addEventListener('click', () => {
