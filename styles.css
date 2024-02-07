@@ -1,12 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 #root {
   width: 100vw;
   height: 100vh;
   display: flex;
+  box-sizing: border-box;
 }
 .pouch {
   width: 100px;
@@ -38,16 +38,25 @@
   width: 80%;
   max-width: 400px;
   text-align: center;
+  animation-name: modalOpen;
+  animation-duration: 3s;
 }
+
+  /* 모달 애니메이션 */
+  @keyframes modalOpen {
+    from {opacity: 0}
+    to {opacity: 1}
+  }
+
 #content {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  width: 60vw;
 }
 #container {
   display: flex;
+  margin: 20px;
 }
 
 #airBox {
