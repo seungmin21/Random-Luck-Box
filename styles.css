@@ -8,6 +8,20 @@
   display: flex;
   box-sizing: border-box;
 }
+
+#root::after {
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("image/mystery-box-fundraiser-scaled.jpg");
+  background-size: cover;
+  opacity: 0.8;
+  z-index: -1;
+}
+
 .pouch {
   width: 15vw;
   height: 100px;
@@ -36,12 +50,19 @@
   left: 30%;
   background-color: #f0f0f0;
   border: 1px solid #888;
-  border-radius: 3%;
-  width: 40vw;
+  border-radius: 5%;
+  width: 50vw;
   height: 50vh;
-  text-align: center;
   animation-name: modalOpen;
   animation-duration: 2s;
+}
+
+.textSpace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 50vh;
 }
 
   /* 모달 애니메이션 */
