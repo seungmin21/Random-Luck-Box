@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모달 스타일</title>
+<style>
+    .content {
+        display: none;
+        width: 200px;
+        height: 200px;
+        background-color: #f0f0f0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+    }
+    .content.visible {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+
+<div class="content hidden" id="contentA">내용 A</div>
+<div class="content hidden" id="contentB">내용 B</div>
+
+</body>
+</html>
