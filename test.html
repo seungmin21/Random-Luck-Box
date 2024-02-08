@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복주머니 이벤트</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복주머니 이벤트</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="root">
-    <div id="container">
-        <div class="pouch" id="pouchA">A</div>
-        <div id="airBox"></div>
-        <div class="pouch" id="pouchB">B</div>
-    </div>
+    <div id="root">
+        <div id="container">
+            <div class="pouch" id="pouchA">포춘주머니</div>
+            <div id="airBox"></div>
+            <div class="pouch" id="pouchB">룰렛</div>
+        </div>
 
-    <div id="content">
-        <div class="hidden" id="contentA">내용 A</div>
-        <div class="hidden" id="contentB">내용 B</div>
-    </div>
+        <div id="content">
+            <div class="hidden" id="contentA">내용 A</div>
+            <div class="hidden" id="contentB">내용 B</div>
+        </div>
+        <div id="modalA" class="modal">
+            <div class="modal-content">
+                <h1 id="modal-ContentA" class="textSpace"></h1>
+            </div>
+        </div>
 
-    <div id="modalA" class="modal">
-        <div class="modal-content">
-            <p class="textSpace">모달 내용 A</p>
+        <div id="modalB" class="modal">
+            <div class="modal-content">
+                <h1 id="modal-ContentB" class="textSpace"></h1>
+            </div>
         </div>
     </div>
-
-    <div id="modalB" class="modal">
-        <div class="modal-content">
-            <h1 id="modal-ContentB" class="textSpace"></h1>
-        </div>
-    </div>
-</div>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
