@@ -5,9 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentB = document.getElementById('contentB');
     const modalA = document.getElementById('modalA');
     const modalB = document.getElementById('modalB');
+    const modalContentA = document.getElementById('modal-ContentA')
     const modalContentB = document.getElementById('modal-ContentB')
 
     const list = ["꽝", "다음 기회에", "한번 더", "광", "물티슈"];
+    const array = ["새해 복 많이 받으세요.", "용돈 줘", "낙담하지 말기", "너나 잘하세요", "그래서 니가 뭘할 수 있는데", "오늘 저녁은 소고기드세요", "풍성한 한가위 되세요", "건강하게 오래오래사세요", "넌 할 수 있어", "어떤 일이든 원하는 대로 이뤄진다."]
 
     function toggleContent(contentId) {
         if (contentId === 'contentA') {
@@ -17,6 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
             contentA.classList.add('hidden');
             contentB.classList.remove('hidden');
         }
+    }
+
+    function FortuneCookie(word) {
+        const randomWord = Math.floor(Math.random() * array.length);
+        word.textContent = array[randomWord]
+
     }
 
     function randomPluck(modalContent) {
@@ -33,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     contentA.addEventListener('click', () => {
+        FortuneCookie(modalContentA)
         modalA.style.display = 'block';
     });
 
