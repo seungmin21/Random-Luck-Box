@@ -18,19 +18,37 @@
   left: 0;
   background-image: url("image/mystery-box-fundraiser-scaled.jpg");
   background-size: cover;
-  opacity: 0.8;
+  opacity: 0.85;
   z-index: -1;
 }
 
-.pouch {
+.FortunePouch {
   width: 14.5vw;
   height: 100px;
-  background-color: #ccc;
+  background-image: url("image/9533b5.jpg");
+  background-size: 17.5vw 138px;
+  border: 2px solid rgb(80, 80, 80);
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
+
+.pouch {
+  width: 14.5vw;
+  height: 100px;
+  background-color: #888;
+  background-image: url("image/ticket-468417164-612x612.jpg");
+  background-size: 15.5vw 100px;
+  border: 2px solid rgb(80, 80, 80);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }
@@ -77,12 +95,20 @@
   align-items: center;
   width: 35vw;
 }
+
 #container {
   display: flex;
   margin: 20px;
 }
 
 #airBox {
-  width: 50px;
+  width: 35px;
   height: 100px;
+}
+
+.Question-Mark {
+  background-image: url("image/question-mark2.jpg");
+  background-size: 56vw 50vh;
+  width: 50vw;
+  height: 50vh;
 }
