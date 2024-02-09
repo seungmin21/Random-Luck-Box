@@ -112,3 +112,10 @@
   width: 50vw;
   height: 50vh;
 }
+
+.random-box {
+  background-image: url("image/randomBox.jpg");
+  background-size: 37.5vw 55vh;
+  width: 37vw;
+  height: 55vh;
+}
