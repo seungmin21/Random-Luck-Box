@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-    }
-
-    #root {
-      display: flex;
-      box-sizing: border-box;
-      width: 100vw;
-      height: 100vh;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복주머니 이벤트</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="root"></div>
+    <div id="root">
+        <div id="container">
+            <h1 class="FortunePouch" id="pouchA"></h1>
+            <div id="airBox"></div>
+            <h1 class="pouch" id="pouchB"></h1>
+        </div>
+
+        <div id="content">
+            <div class="hidden Question-Mark" id="contentA"></div>
+            <div class="hidden random-box" id="contentB"></div>
+        </div>
+        <div id="modalA" class="modal">
+            <div class="modal-content">
+                <h1 id="modal-ContentA" class="textSpace"></h1>
+            </div>
+        </div>
+
+        <div id="modalB" class="modal">
+            <div class="modal-content">
+                <h1 id="modal-ContentB" class="textSpace"></h1>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
